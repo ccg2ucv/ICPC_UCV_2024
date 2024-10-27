@@ -1,0 +1,82 @@
+
+Caso 1: Superposición Total
+Descripción: El primer polígono (0,0)-(4,0)-(0,4)-(4,4) cubre completamente al segundo (1,1)-(3,1)-(1,3)-(3,3).
+Entrada:
+0 0 4 0 0 4 4 4
+1 1 3 1 1 3 3 3
+Salida esperada: YES 4 16 4
+Explicación: Los dos polígonos se superponen completamente, con un área de intersección de 4. El área total del primer polígono es 16 y del segundo es 4.
+
+Caso 2: Superposición Parcial
+Descripción: Los polígonos se intersectan parcialmente.
+Entrada:
+0 0 4 0 0 4 4 4
+2 2 6 2 2 6 6 6
+Salida esperada: YES 4 16 16
+Explicación: Los polígonos se superponen en un área de 4 unidades, aunque ambos tienen un área total de 16.
+
+Caso 3: Sin Superposición (lado izquierdo)
+Descripción: El primer polígono está completamente a la izquierda del segundo.
+Entrada:
+0 0 4 0 0 4 4 4
+5 0 9 0 5 4 9 4
+Salida esperada: NOT 16 16
+Explicación: No hay área de intersección entre los dos polígonos, ya que están separados.
+
+Caso 4: Sin Superposición (lado derecho)
+Descripción: El primer polígono está completamente a la derecha del segundo.
+Entrada:
+5 0 9 0 5 4 9 4
+0 0 4 0 0 4 4 4
+Salida esperada: NOT 16 16
+Explicación: Similar al caso 3, no hay intersección ya que los polígonos no se superponen.
+
+Caso 5: Un solo punto de contacto (sin área de superposición)
+Descripción: Los polígonos solo se tocan en un punto, pero no comparten área.
+Entrada:
+0 0 4 0 0 4 4 4
+4 4 8 4 4 8 8 8
+Salida esperada: NOT 16 16
+Explicación: Aunque los polígonos se tocan en un vértice, no hay área de intersección.
+
+Caso 6: Superposición Completa (un polígono dentro de otro)
+Descripción: El segundo polígono está completamente dentro del primero.
+Entrada:
+0 0 10 0 0 10 10 10
+2 2 4 2 2 4 4 4
+Salida esperada: YES 4 100 4
+Explicación: El segundo polígono se encuentra totalmente dentro del primer polígono, con un área de intersección de 4 unidades.
+
+Caso 7: Mismos polígonos (superposición total)
+Descripción: Ambos polígonos son idénticos.
+Entrada:
+0 0 4 0 0 4 4 4
+0 0 4 0 0 4 4 4
+Salida esperada: YES 16 16 16
+Explicación: Los dos polígonos son exactamente iguales, por lo que el área de intersección es igual a su área total.
+
+Caso 8: Superposición Parcial con números grandes
+Descripción: Polígonos con coordenadas grandes con una intersección parcial.
+Entrada:
+1000000 1000000 2000000 1000000 1000000 2000000 2000000 2000000
+1500000 1500000 2500000 1500000 1500000 2500000 2500000 2500000
+Salida esperada: YES 250000000000 1000000000000 1000000000000
+Explicación: Los polígonos se intersectan en una zona de 250000000000 unidades.
+
+Caso 9: Sin Superposición con números grandes
+Descripción: Los polígonos están muy separados, sin intersección.
+Entrada:
+1000000 1000000 2000000 1000000 1000000 2000000 2000000 2000000
+3000000 3000000 4000000 3000000 3000000 4000000 4000000 4000000
+Salida esperada: NOT 1000000000000 1000000000000
+Explicación: No hay área común entre los polígonos, están ubicados a gran distancia uno del otro.
+
+Caso 10: Un polígono dentro de otro con números grandes
+Descripción: El segundo polígono está completamente dentro del primero.
+Entrada:
+1000000 1000000 5000000 1000000 1000000 5000000 5000000 5000000
+2000000 2000000 3000000 2000000 2000000 3000000 3000000 3000000
+Salida esperada: YES 1000000000000 16000000000000 1000000000000
+Explicación: El segundo polígono está completamente contenido dentro del primero.
+
+
